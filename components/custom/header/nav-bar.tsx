@@ -1,12 +1,27 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { MoveRight } from "lucide-react";
+import { MoveRight, Menu } from "lucide-react";
 import { usePathname } from "next/navigation";
+import {
+  SheetTrigger,
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet";
 
 const components: {
   [key: string]: {
@@ -40,61 +55,137 @@ export default function Navbar({ className }: { className?: string }) {
   const pathName = usePathname();
 
   return (
-    <header className={cn("border-b w-full", className)}>
-      <div className="flex xl:gap-48 mx-auto items-center max-[1440px]:px-32 justify-between max-w-[1440px]">
+    <header className="w-full border-b">
+      <div className={cn("flex items-center justify-between", className)}>
+        {/* Logo */}
         <Link href={"/"}>
-          <Image src={"/"} alt="jaipur-aashray logo" width={80} height={80} className=" border" />
+          <Image
+            src={"/"}
+            alt="Logo"
+            width={40}
+            height={40}
+            className="border"
+          />
         </Link>
-        <NavigationMenu className="">
-          <NavigationMenuList className="">
-            {components.map((component, index) => {
-              const [[key, value]] = Object.entries(component);
 
-              return (
-                <NavigationMenuItem key={index}>
-                  {value.internalLinks ? (
-                    // If internalLinks exist, show dropdown
-                    <>
-                      <NavigationMenuTrigger>{value.title}</NavigationMenuTrigger>
-                      <NavigationMenuContent>
-                        {value.internalLinks.map((link, idx) => (
-                          <ListItem key={idx} title={link.title} href={link.href} className={navigationMenuTriggerStyle()} />
-                        ))}
-                      </NavigationMenuContent>
-                    </>
+        {/* Desktop Navigation */}
+        <div className="hidden items-center gap-8 lg:flex">
+          <NavigationMenu>
+            <NavigationMenuList>
+              {components.map((component, index) => {
+                const [[key, value]] = Object.entries(component);
+                return (
+                  <NavigationMenuItem key={index}>
+                    {value.internalLinks ? (
+                      <>
+                        <NavigationMenuTrigger>
+                          {value.title}
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                          {value.internalLinks.map((link, idx) => (
+                            <ListItem
+                              key={idx}
+                              title={link.title}
+                              href={link.href}
+                              className={navigationMenuTriggerStyle()}
+                            />
+                          ))}
+                        </NavigationMenuContent>
+                      </>
+                    ) : (
+                      <NavigationMenuLink asChild>
+                        <Link
+                          href={value.href as string}
+                          className={cn(
+                            pathName === value.href
+                              ? "block rounded-md px-4 py-2 text-sm leading-none font-medium text-red-700 transition-colors outline-none select-none hover:!text-red-700 focus:!text-red-700"
+                              : "block rounded-md px-4 py-2 text-sm leading-none font-medium transition-colors outline-none select-none hover:!text-red-700 focus:!text-red-700",
+                            navigationMenuTriggerStyle(),
+                          )}
+                        >
+                          {value.title}
+                        </Link>
+                      </NavigationMenuLink>
+                    )}
+                  </NavigationMenuItem>
+                );
+              })}
+            </NavigationMenuList>
+          </NavigationMenu>
+
+          {/* Contact Us Button */}
+          <Button
+            variant={"outline"}
+            className="hover:text-red-700 focus:text-red-700"
+          >
+            Contact Us <MoveRight />
+          </Button>
+        </div>
+
+        {/* Mobile Menu */}
+        <div className="lg:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="outline" size="icon">
+                <Menu />
+              </Button>
+            </SheetTrigger>
+            <SheetContent className="w-full max-w-[320px] p-4">
+              <SheetHeader className="!p-0">
+                <SheetTitle className="text-lg font-semibold">
+                  Navigation Menu
+                </SheetTitle>
+              </SheetHeader>
+
+              {/* Mobile Links */}
+              <div className="mt-4 flex flex-col gap-6">
+                {components.map((component, index) => {
+                  const [[key, value]] = Object.entries(component);
+
+                  return value.internalLinks ? (
+                    value.internalLinks.map((link, idx) => (
+                      <Link
+                        key={idx + link.title}
+                        href={link.href}
+                        className="block border-b pb-2 text-base leading-none font-medium tracking-wide transition-colors select-none hover:text-red-700 focus:text-red-700"
+                      >
+                        {link.title}
+                      </Link>
+                    ))
                   ) : (
-                    // If no internalLinks, render a direct link
-                    <NavigationMenuLink asChild>
-                      <a
-                        href={value.href}
-                        className={cn(
-                          pathName === value.href
-                            ? "px-4 py-2 text-sm font-medium block select-none space-y-1 rounded-md p-3 leading-none outline-none transition-colors text-red-700 hover:!text-red-700 focus:!text-red-700"
-                            : "px-4 py-2 text-sm font-medium block select-none space-y-1 rounded-md p-3 leading-none outline-none transition-colors hover:!text-red-700 focus:!text-red-700",
-                          navigationMenuTriggerStyle()
-                        )}>
-                        {value.title}
-                      </a>
-                    </NavigationMenuLink>
-                  )}
-                </NavigationMenuItem>
-              );
-            })}
-          </NavigationMenuList>
-        </NavigationMenu>
-        <Button variant={"outline"} className="hover:text-red-700 focus:text-red-700 focus-within:text-red-700">
-          Contact Us <MoveRight />{" "}
-        </Button>
+                    <Link
+                      key={value.title}
+                      href={value.href as string}
+                      className="block border-b pb-2 text-base leading-none font-medium tracking-wide transition-colors select-none hover:text-red-700 focus:text-red-700"
+                    >
+                      {value.title}
+                    </Link>
+                  );
+                })}
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </header>
   );
 }
 
-const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a"> & { title: string }>(({ className, title, ...props }, ref) => {
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a"> & { title: string }
+>(({ className, title, ...props }, ref) => {
   return (
     <NavigationMenuLink asChild className="w-full">
-      <a ref={ref} className={cn("block select-none space-y-1 rounded-md p-3 leading-none  outline-none transition-colors hover:!text-red-700 focus:!text-red-700", className)} {...props}>
-        <div className="text-sm font-medium leading-none w-full">{title}</div>
+      <a
+        ref={ref}
+        className={cn(
+          "block rounded-md p-3 leading-none transition-colors outline-none select-none hover:text-red-700 focus:text-red-700",
+          className,
+        )}
+        {...props}
+      >
+        <div className="w-full text-sm font-medium">{title}</div>
       </a>
     </NavigationMenuLink>
   );
