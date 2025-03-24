@@ -13,7 +13,7 @@ export default function AppLayout({
       <main className="mx-auto min-h-screen max-w-[1440px] px-4 py-4 sm:px-6 lg:px-16 xl:px-32">
         {children}
       </main>
-      <Footer className="mx-auto min-h-[50vh] max-w-[1440px] px-4 py-4 sm:px-6 lg:px-16 xl:px-32" />
+      <Footer className="mx-auto max-w-[1440px] px-4 py-4 sm:px-6 sm:py-6 lg:px-16 lg:py-20 xl:px-32" />
     </>
   );
 }
