@@ -1,4 +1,4 @@
-export const routes: NavbarLinks = {
+export const routes = {
   home: "/",
   "about-us": "/about-us",
   properties: "/properties",
