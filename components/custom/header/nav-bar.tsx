@@ -55,7 +55,7 @@ export default function Navbar({ className }: { className?: string }) {
   const pathName = usePathname();
 
   return (
-    <header className="sticky top-0 z-20 w-full border-b bg-slate-50">
+    <header className="sticky top-0 z-20 w-full border-b bg-white">
       <div className={cn("flex items-center justify-between", className)}>
         {/* Logo */}
         <Link href={"/"}>
