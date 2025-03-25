@@ -9,11 +9,11 @@ export default function AppLayout({
 }>) {
   return (
     <>
-      <Navbar className="mx-auto max-w-[1440px] px-8 py-4 lg:px-8" />
+      <Navbar className="mx-auto max-w-[1440px] px-8 py-4 lg:px-8 2xl:px-0" />
       <main className="mx-auto min-h-screen max-w-[1440px] py-4 sm:px-6 lg:px-0">
         {children}
       </main>
-      <Footer className="mx-auto max-w-[1440px] px-8 py-4 sm:py-6 lg:px-8 lg:py-20" />
+      <Footer className="3xl:px-0 mx-auto max-w-[1440px] px-8 py-4 sm:py-6 lg:px-8 lg:py-20" />
     </>
   );
 }
