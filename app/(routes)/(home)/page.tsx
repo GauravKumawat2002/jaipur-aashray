@@ -1,5 +1,6 @@
 import { routes } from "@/app/routes";
 import AboutUsSection from "@/components/custom/home/about-us-section";
+import FeaturesSection from "@/components/custom/home/features-section";
 import Hero from "@/components/custom/home/hero";
 import PropertySection from "@/components/custom/home/property-section";
 import PropertyCard from "@/components/custom/shared/property-card";
@@ -100,6 +101,27 @@ const propertyCardDetails: PropertyCardDetails[] = [
   },
 ];
 
+const featuresContent = {
+  sectionTitle: "Our Features",
+  cardContent: [
+    {
+      title: "Seamless Solutions Your Success",
+      description:
+        "Discover properties, connect with experts, and unlock opportunities effortlessly. Building dreams, one home at a time—your journey starts here.",
+    },
+    {
+      title: "Proactive Realty Services",
+      description:
+        "Our trusted partner in real estate. Offering expert guidance, tailored solutions, and seamless experiences to help you find and invest in the perfect property.",
+    },
+    {
+      title: "Supreme Home Finders",
+      description:
+        "Turning dreams into reality. Your ultimate destination for discovering perfect homes, tailored to your needs. Let us guide you to your supreme living space.",
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <>
@@ -121,6 +143,10 @@ export default function Home() {
           properties={propertyCardDetails}
           viewMoreButtonText="View More"
         />
+      </section>
+      <section className="mb-8">
+        {" "}
+        <FeaturesSection sectionContent={featuresContent} />
       </section>
     </>
   );
