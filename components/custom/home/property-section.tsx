@@ -14,9 +14,9 @@ export default function PropertySection({
   return (
     <div className={cn("border bg-slate-700 p-8", className)}>
       <div className="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row md:items-center lg:mb-12">
-        <SectionTitle title={sectionTitle} />
+        <SectionTitle title={sectionTitle} className="text-gray-50" />
         <Button
-            asChild
+          asChild
           className="rounded-md bg-red-600 px-6 py-2 text-white transition-colors hover:bg-red-700 focus:bg-red-700 focus:outline-none focus-visible:bg-red-700 focus-visible:outline-none"
         >
           <Link href={routes.properties} className="flex items-center gap-2">
