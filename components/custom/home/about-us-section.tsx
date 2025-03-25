@@ -15,9 +15,9 @@ const AboutUsSection: React.FC<AboutUsProps> = ({
   className,
 }) => {
   return (
-    <section className={cn("bg-slate-50 px-8 py-8", className)}>
+    <section className={cn("bg-slate-50 p-8", className)}>
       <div className="mx-auto flex flex-col gap-8 md:flex-row">
-        <AboutUsImage alt={imageAlt} />
+        <AboutUsImage alt={imageAlt} src={""} />
         <AboutUsContent
           title={title}
           subtitle={subtitle}

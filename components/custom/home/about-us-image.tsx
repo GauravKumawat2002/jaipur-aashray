@@ -1,9 +1,5 @@
 import React from "react";
 
-interface AboutUsImageProps {
-  alt: string;
-}
-
 const AboutUsImage: React.FC<AboutUsImageProps> = ({ alt }) => {
   return (
     <div className="flex flex-1 items-center justify-center">
