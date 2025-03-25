@@ -49,4 +49,14 @@ export declare global {
     properties: PropertyCardDetails[];
     className?: string;
   }
+  interface FeaturesSectionProps {
+    className?: string;
+    sectionContent: {
+      sectionTitle: string;
+      cardContent: {
+        title: string;
+        description: string;
+      }[];
+    };
+  }
 }
