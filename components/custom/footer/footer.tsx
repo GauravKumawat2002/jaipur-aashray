@@ -44,7 +44,7 @@ export default function Footer({ className }: Props) {
             alt="company logo"
             width={50}
             height={30}
-            className="mb-4 h-10 w-40 object-contain text-2xl"
+            className="mb-4 h-10 w-full object-contain text-2xl"
           />
           <p className="text-md mb-4 font-semibold">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
