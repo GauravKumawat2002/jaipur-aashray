@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Facebook, LucideProps, Instagram, Twitter } from "lucide-react";
 import { ForwardRefExoticComponent, RefAttributes } from "react";
 import FooterLinks from "./footer-links";
+import { routes } from "@/app/routes";
 
 const footerSocialLinks = [
   {
@@ -20,9 +21,10 @@ const footerSocialLinks = [
   },
 ];
 const footerLinks = [
-  { href: "/about", title: "About Us" },
-  { href: "/services", title: "Services" },
-  { href: "/contact", title: "Contact" },
+  { href: routes["about-us"], title: "About Us" },
+  { href: routes["contact-us"], title: "Contact Us" },
+  { href: routes["privacy-and-policy"], title: "Privacy & Policy" },
+  { href: routes["terms-and-conditions"], title: "Terms & Conditions" },
 ];
 
 interface FooterProps {

@@ -8,4 +8,5 @@ export const routes = {
   "privacy-and-policy": "/privacy-and-policy",
   "terms-and-conditions": "/terms-and-conditions",
   testimonials: "/testimonials",
+  "contact-us": "/contact-us",
 };
