@@ -31,7 +31,7 @@ export default function FooterLinks({
           <Link
             key={index}
             href={link.href}
-            className="text-inherit no-underline"
+            className="text-inherit no-underline outline-none hover:text-red-600 focus:text-red-600 focus-visible:text-red-600"
           >
             {link.title}
           </Link>
