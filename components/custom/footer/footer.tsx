@@ -25,10 +25,7 @@ const footerLinks = [
   { href: "/contact", title: "Contact" },
 ];
 
-interface Props {
-  className?: string;
-}
-export default function Footer({ className }: Props) {
+export default function Footer({ className }: FooterProps) {
   return (
     <footer className="w-full bg-slate-900">
       <div
@@ -73,16 +70,6 @@ export default function Footer({ className }: Props) {
       </div>
     </footer>
   );
-}
-
-interface FooterSocialProps {
-  className?: string;
-  footerSocial: {
-    href: string;
-    icon: ForwardRefExoticComponent<
-      Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>
-    >;
-  };
 }
 
 function FooterSocial({ footerSocial, className }: FooterSocialProps) {

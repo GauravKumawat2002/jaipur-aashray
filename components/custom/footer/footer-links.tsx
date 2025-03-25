@@ -2,17 +2,6 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
-interface Link {
-  href: string;
-  title: string;
-}
-
-interface FooterLinksProps {
-  heading: string;
-  className?: string;
-  links: Link[];
-}
-
 export default function FooterLinks({
   heading,
   links,
