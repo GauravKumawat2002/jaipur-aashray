@@ -76,7 +76,7 @@ export default function FeaturesSection({
   };
 
   return (
-    <div className={cn("mx-auto space-y-8 p-8", className)}>
+    <div className={cn("3xl:p-0 mx-auto space-y-8 p-8", className)}>
       <SectionTitle title={sectionContent.sectionTitle} />
 
       <div className="grid gap-6 md:grid-cols-3">
