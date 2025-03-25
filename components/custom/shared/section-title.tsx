@@ -1,5 +1,11 @@
 import { cn } from "@/lib/utils";
 
+interface SectionTitleProps {
+  className?: string;
+  title: string;
+  primaryColor?: string;
+}
+
 export default function SectionTitle({
   primaryColor = "#c22126",
   title,

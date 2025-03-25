@@ -1,6 +1,9 @@
 import { cn } from "@/lib/utils";
 import ContactForm from "@/components/custom/shared/contact-form";
 
+interface ContactUsSectionProps {
+  className?: string;
+}
 export default function ContactUsSection({ className }: ContactUsSectionProps) {
   return (
     <div

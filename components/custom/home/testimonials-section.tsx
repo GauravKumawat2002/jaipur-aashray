@@ -11,7 +11,15 @@ import Autoplay from "embla-carousel-autoplay";
 import ClientTestimonialCard from "./testimonials-card";
 import SectionTitle from "../shared/section-title";
 
-
+interface TestimonialSectionProps {
+  testimonials: {
+    name: string;
+    role: string;
+    testimonial: string;
+    imageUrl?: string;
+  }[];
+  className?: string;
+}
 
 export default function TestimonialSection({
   testimonials,

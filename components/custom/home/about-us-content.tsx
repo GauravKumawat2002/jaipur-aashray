@@ -1,5 +1,13 @@
 import React, { ReactNode } from "react";
-import Card from "./card";
+import Card, { CardProps } from "./card";
+
+interface AboutUsContentProps {
+  title: string;
+  subtitle: string;
+  tagline: string;
+  card: CardProps;
+  children: ReactNode;
+}
 
 const AboutUsContent: React.FC<AboutUsContentProps> = ({
   title,

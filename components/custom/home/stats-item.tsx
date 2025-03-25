@@ -1,5 +1,11 @@
 import React from "react";
 import SlotCounter from "react-slot-counter";
+
+export interface StatItem {
+  number: string;
+  label: string;
+}
+
 const StatsItem: React.FC<StatItem> = ({ number, label }) => {
   return (
     <div className="flex flex-col">

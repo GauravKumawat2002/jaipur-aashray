@@ -1,14 +1,14 @@
 import { routes } from "@/app/routes";
-import AboutUsSection from "@/components/custom/home/about-us-section";
+import AboutUsSection, {
+  AboutUsProps,
+} from "@/components/custom/home/about-us-section";
+import ContactUsSection from "@/components/custom/home/contact-us-section";
 import FeaturesSection from "@/components/custom/home/features-section";
 import Hero from "@/components/custom/home/hero";
 import PropertySection from "@/components/custom/home/property-section";
-import PropertyCard from "@/components/custom/shared/property-card";
-import SectionTitle from "@/components/custom/shared/section-title";
-import { Button } from "@/components/ui/button";
+import TestimonialSection from "@/components/custom/home/testimonials-section";
+import { PropertyCardDetails } from "@/components/custom/shared/property-card";
 import p2 from "@/public/p2.png";
-import { MoveRight } from "lucide-react";
-import Link from "next/link";
 
 const aboutUsData: AboutUsProps = {
   title: "About Us",
@@ -63,44 +63,43 @@ const propertyCardDetails: PropertyCardDetails[] = [
     },
     propertyImageAlt: "property Image",
   },
-  {
-    propertyName: "Beach House",
-    propertyPrice: "$1,200,000",
-    propertyLocation: "Malibu, CA",
-    propertyImage: p2,
-    bhkDetails: {
-      bed: 4,
-      hall: 2,
-      kitchen: 2,
-    },
-    propertyImageAlt: "property Image",
-  },
-  {
-    propertyName: "Penthouse Suite",
-    propertyPrice: "$2,500,000",
-    propertyLocation: "Miami, FL",
-    propertyImage: p2,
-    bhkDetails: {
-      bed: 3,
-      hall: 2,
-      kitchen: 1,
-    },
-    propertyImageAlt: "property Image",
-  },
-  {
-    propertyName: "Suburban Home",
-    propertyPrice: "$600,000",
-    propertyLocation: "Austin, TX",
-    propertyImage: p2,
-    bhkDetails: {
-      bed: 3,
-      hall: 2,
-      kitchen: 1,
-    },
-    propertyImageAlt: "property Image",
-  },
+  // {
+  //   propertyName: "Beach House",
+  //   propertyPrice: "$1,200,000",
+  //   propertyLocation: "Malibu, CA",
+  //   propertyImage: p2,
+  //   bhkDetails: {
+  //     bed: 4,
+  //     hall: 2,
+  //     kitchen: 2,
+  //   },
+  //   propertyImageAlt: "property Image",
+  // },
+  // {
+  //   propertyName: "Penthouse Suite",
+  //   propertyPrice: "$2,500,000",
+  //   propertyLocation: "Miami, FL",
+  //   propertyImage: p2,
+  //   bhkDetails: {
+  //     bed: 3,
+  //     hall: 2,
+  //     kitchen: 1,
+  //   },
+  //   propertyImageAlt: "property Image",
+  // },
+  // {
+  //   propertyName: "Suburban Home",
+  //   propertyPrice: "$600,000",
+  //   propertyLocation: "Austin, TX",
+  //   propertyImage: p2,
+  //   bhkDetails: {
+  //     bed: 3,
+  //     hall: 2,
+  //     kitchen: 1,
+  //   },
+  //   propertyImageAlt: "property Image",
+  // },
 ];
-
 const featuresContent = {
   sectionTitle: "Our Features",
   cardContent: [
@@ -121,12 +120,73 @@ const featuresContent = {
     },
   ],
 };
+const testimonialsData = [
+  {
+    name: "John Doe",
+    role: "CEO, XYZ Corp",
+    testimonial:
+      "Working with this team was an amazing experience. They delivered beyond expectations!",
+    imageUrl: "/john-doe.jpg",
+  },
+  {
+    name: "Jane Smith",
+    role: "CTO, ABC Ltd",
+    testimonial:
+      "Excellent service and outstanding results. Highly recommended!",
+    imageUrl: "/jane-smith.jpg",
+  },
+  {
+    name: "Robert Brown",
+    role: "Project Manager, LMN Inc",
+    testimonial: "Professional and result-driven team. Great to work with!",
+    imageUrl: "/robert-brown.jpg",
+  },
+  {
+    name: "John Doe",
+    role: "CEO, XYZ Corp",
+    testimonial:
+      "Working with this team was an amazing experience. They delivered beyond expectations!",
+    imageUrl: "/john-doe.jpg",
+  },
+  {
+    name: "Jane Smith",
+    role: "CTO, ABC Ltd",
+    testimonial:
+      "Excellent service and outstanding results. Highly recommended!",
+    imageUrl: "/jane-smith.jpg",
+  },
+  {
+    name: "Robert Brown",
+    role: "Project Manager, LMN Inc",
+    testimonial: "Professional and result-driven team. Great to work with!",
+    imageUrl: "/robert-brown.jpg",
+  },
+  {
+    name: "John Doe",
+    role: "CEO, XYZ Corp",
+    testimonial:
+      "Working with this team was an amazing experience. They delivered beyond expectations!",
+    imageUrl: "/john-doe.jpg",
+  },
+  {
+    name: "Jane Smith",
+    role: "CTO, ABC Ltd",
+    testimonial:
+      "Excellent service and outstanding results. Highly recommended!",
+    imageUrl: "/jane-smith.jpg",
+  },
+  {
+    name: "Robert Brown",
+    role: "Project Manager, LMN Inc",
+    testimonial: "Professional and result-driven team. Great to work with!",
+    imageUrl: "/robert-brown.jpg",
+  },
+];
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <>
-      <section className="mb-8">
-        {" "}
+    <div className="space-y-8">
+      <section>
         <Hero
           title="Invest Today In Your Dream Home"
           subtitle="Find your dream home with us—where trust, innovation, and lifestyle come together seamlessly!"
@@ -134,20 +194,28 @@ export default function Home() {
           primaryColor="#c22126"
         />
       </section>
-      <section className="mb-8">
+      <section>
         <AboutUsSection {...aboutUsData} />
       </section>
-      <section className="mb-8">
+      <section>
         <PropertySection
           sectionTitle={"Featured Properties"}
           properties={propertyCardDetails}
           viewMoreButtonText="View More"
         />
       </section>
-      <section className="mb-8">
-        {" "}
+      <section>
         <FeaturesSection sectionContent={featuresContent} />
       </section>
-    </>
+      <section>
+        <ContactUsSection className="" />
+      </section>
+      <section>
+        <TestimonialSection
+          testimonials={testimonialsData}
+          className="mx-auto"
+        />
+      </section>
+    </div>
   );
 }

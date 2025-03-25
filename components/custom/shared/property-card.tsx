@@ -1,58 +1,3 @@
-// import {
-//   Card,
-//   CardHeader,
-//   CardTitle,
-//   CardContent,
-//   CardDescription,
-//   CardFooter,
-// } from "@/components/ui/card";
-// import Image from "next/image";
-// import { Bed, MapPin, Microwave, TvMinimalPlay } from "lucide-react";
-// import { Separator } from "@/components/ui/separator";
-// import { cn } from "@/lib/utils";
-// export default function PropertyCard({
-//   className,
-//   cardDetails,
-// }: PropertyCardProps) {
-//   return (
-//     <Card
-//       className={cn(
-//         "cursor-pointer transition-all hover:border-b-red-700 focus:border-b-red-700 focus-visible:border-b-red-700",
-//         className,
-//       )}
-//     >
-//       <CardHeader>
-//         <Image
-//           // width={20}
-//           // height={20}
-//           src={cardDetails.propertyImage}
-//           alt={cardDetails.propertyImageAlt}
-//           className="mb-2 w-full rounded-md object-contain"
-//         />
-//         <CardTitle className="text-xl">{cardDetails.propertyName} </CardTitle>
-//       </CardHeader>
-//       <CardContent className="flex flex-col items-start gap-2">
-//         <p className="text-lg tracking-wider">{cardDetails.propertyPrice}</p>
-//         <CardDescription className="flex items-center gap-2">
-//           <MapPin /> {cardDetails.propertyLocation}
-//         </CardDescription>
-//       </CardContent>
-//       <Separator orientation="horizontal" />
-//       <CardFooter>
-//         <ul className="flex items-center gap-6">
-//           {Object.entries(cardDetails.bhkDetails).map(([key, value]) => (
-//             <li className="flex items-center gap-2 text-xs" key={key + value}>
-//               {key === "bed" && <Bed size={20} />}
-//               {key === "hall" && <TvMinimalPlay size={20} />}
-//               {key === "kitchen" && <Microwave size={20} />}
-//               {value} {key.toUpperCase()}
-//             </li>
-//           ))}
-//         </ul>
-//       </CardFooter>
-//     </Card>
-//   );
-// }
 import {
   Card,
   CardHeader,
@@ -61,10 +6,28 @@ import {
   CardDescription,
   CardFooter,
 } from "@/components/ui/card";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Bed, MapPin, Microwave, TvMinimalPlay } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
+
+interface PropertyCardProps {
+  className?: string;
+  cardDetails: PropertyCardDetails;
+}
+
+export interface PropertyCardDetails {
+  propertyImage: string | StaticImageData;
+  propertyName: string;
+  propertyImageAlt: string;
+  propertyLocation: string;
+  propertyPrice: string;
+  bhkDetails: {
+    bed: number;
+    hall: number;
+    kitchen: number;
+  };
+}
 
 export default function PropertyCard({
   className,

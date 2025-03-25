@@ -1,4 +1,9 @@
+import { StaticImageData } from "next/image";
 import React from "react";
+interface AboutUsImageProps {
+  src: string | StaticImageData;
+  alt: string;
+}
 
 const AboutUsImage: React.FC<AboutUsImageProps> = ({ alt }) => {
   return (

@@ -1,9 +1,20 @@
 import React from "react";
 import AboutUsContent from "./about-us-content";
 import AboutUsImage from "./about-us-image";
-import StatsItem from "./stats-item";
+import StatsItem, { StatItem } from "./stats-item";
 import { routes } from "@/app/routes";
 import { cn } from "@/lib/utils";
+import { CardProps } from "./card";
+
+export interface AboutUsProps {
+  title: string;
+  subtitle: string;
+  tagline: string;
+  card: CardProps;
+  stats: StatItem[];
+  imageAlt: string;
+  className?: string;
+}
 
 const AboutUsSection: React.FC<AboutUsProps> = ({
   title,

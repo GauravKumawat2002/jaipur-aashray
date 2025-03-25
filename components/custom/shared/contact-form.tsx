@@ -7,6 +7,11 @@ import { cn } from "@/lib/utils";
 import React, { useState } from "react";
 import SectionTitle from "./section-title";
 
+interface ContactFormProps {
+  heading?: string;
+  className?: string;
+}
+
 const ContactForm: React.FC<ContactFormProps> = ({ heading, className }) => {
   const [formData, setFormData] = useState({
     name: "",

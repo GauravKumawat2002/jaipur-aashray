@@ -1,10 +1,18 @@
 import { routes } from "@/app/routes";
 import { Button } from "@/components/ui/button";
 import { MoveRight } from "lucide-react";
-import PropertyCard from "../shared/property-card";
+import PropertyCard, { PropertyCardDetails } from "../shared/property-card";
 import SectionTitle from "../shared/section-title";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+
+interface PropertySectionProps {
+  sectionTitle: string;
+  viewMoreButtonText?: string;
+  properties: PropertyCardDetails[];
+  className?: string;
+}
+
 export default function PropertySection({
   sectionTitle = "Our Previous Sold Properties",
   viewMoreButtonText = "View More",

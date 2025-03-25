@@ -1,6 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 
+interface ClientTestimonialCardProps {
+  name: string;
+  role: string;
+  testimonial: string;
+  imageUrl?: string;
+}
 
 export default function ClientTestimonialCard({
   name,

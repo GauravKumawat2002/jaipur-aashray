@@ -2,6 +2,12 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
 // import { CardProps } from "../types/aboutUs";
+export interface CardProps {
+  title: string;
+  text: string;
+  buttonText: string;
+  ctaButtonLink: string;
+}
 
 const Card: React.FC<CardProps> = ({
   title,

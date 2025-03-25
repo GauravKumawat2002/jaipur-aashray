@@ -1,16 +1,3 @@
-// import { cn } from "@/lib/utils";
-// import SectionTitle from "../shared/section-title";
-
-// export default function FeaturesSection({
-//   className,
-//   sectionContent,
-// }: FeaturesSectionProps) {
-//   return (
-//     <div className={cn("", className)}>
-//       <SectionTitle title={sectionContent.sectionTitle} />
-//     </div>
-//   );
-// }
 import { cn } from "@/lib/utils";
 import {
   Card,
@@ -21,19 +8,6 @@ import {
 } from "@/components/ui/card";
 import { Home, HelpCircle } from "lucide-react";
 import SectionTitle from "../shared/section-title";
-
-// Shared Section Title Component
-// export const SectionTitle = ({
-//   title,
-//   className,
-// }: {
-//   title: string;
-//   className?: string;
-// }) => (
-//   <div className={cn("mb-12 text-center", className)}>
-//     <h2 className="text-3xl font-bold text-gray-800 md:text-4xl">{title}</h2>
-//   </div>
-// );
 
 // Feature Card Icon Component
 const FeatureIcon = ({ icon: Icon }: { icon: React.ElementType }) => (
@@ -63,6 +37,16 @@ const FeatureCard = ({
   </Card>
 );
 
+interface FeaturesSectionProps {
+  className?: string;
+  sectionContent: {
+    sectionTitle: string;
+    cardContent: {
+      title: string;
+      description: string;
+    }[];
+  };
+}
 // Main Features Section Component
 export default function FeaturesSection({
   className,
@@ -76,7 +60,7 @@ export default function FeaturesSection({
   };
 
   return (
-    <div className={cn("3xl:p-0 mx-auto space-y-8 p-8", className)}>
+    <div className={cn("4xl:p-0 mx-auto space-y-8 p-8", className)}>
       <SectionTitle title={sectionContent.sectionTitle} />
 
       <div className="grid gap-6 md:grid-cols-3">
