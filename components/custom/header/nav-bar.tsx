@@ -55,7 +55,7 @@ export default function Navbar({ className }: { className?: string }) {
   const pathName = usePathname();
 
   return (
-    <header className="w-full border-b">
+    <header className="sticky top-0 z-20 w-full border-b bg-slate-50">
       <div className={cn("flex items-center justify-between", className)}>
         {/* Logo */}
         <Link href={"/"}>
@@ -176,11 +176,11 @@ const ListItem = React.forwardRef<
   React.ComponentPropsWithoutRef<"a"> & { title: string }
 >(({ className, title, ...props }, ref) => {
   return (
-    <NavigationMenuLink asChild className="w-full">
+    <NavigationMenuLink asChild>
       <a
         ref={ref}
         className={cn(
-          "block rounded-md p-3 leading-none transition-colors outline-none select-none hover:text-red-700 focus:text-red-700",
+          "block w-full rounded-md p-3 leading-none transition-colors outline-none select-none hover:!text-red-700 focus:!text-red-700",
           className,
         )}
         {...props}
