@@ -73,6 +73,10 @@
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
 }
+@theme {
+  --breakpoint-3xl: 90rem;
+  --breakpoint-4xl: 120rem;
+}
 
 @theme inline {
   --color-background: var(--background);
