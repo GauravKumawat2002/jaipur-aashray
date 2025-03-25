@@ -33,7 +33,7 @@ export default function Footer({ className }: Props) {
     <footer className="w-full bg-slate-900">
       <div
         className={cn(
-          "flex flex-col items-start justify-between lg:flex-row lg:items-start xl:gap-20",
+          "flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-start xl:gap-20",
           className,
         )}
       >
@@ -64,10 +64,10 @@ export default function Footer({ className }: Props) {
           </ul>
         </div>
         <div>
-          <FooterLinks heading="Use-full Links" links={footerLinks} />
+          <FooterLinks heading="Useful Links" links={footerLinks} />
         </div>
         <div>
-          <FooterLinks heading="Use-full Links" links={footerLinks} />
+          <FooterLinks heading="Other Links" links={footerLinks} />
         </div>
         ``
       </div>
