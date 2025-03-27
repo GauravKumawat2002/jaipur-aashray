@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
-import { latoFont, poppinsFont, geistMono, geistSans } from "./fonts";
+import {
+  latoFont,
+  poppinsFont,
+  geistMono,
+  geistSans,
+  bungeeFont,
+} from "./fonts";
 
 export const metadata: Metadata = {
   title: "Jaipur Aashray",
@@ -16,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`mx-auto ${latoFont.variable} ${poppinsFont.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`mx-auto ${latoFont.variable} ${poppinsFont.variable} ${bungeeFont.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>
