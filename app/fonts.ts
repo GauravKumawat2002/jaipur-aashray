@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Lato, Poppins } from "next/font/google";
+import { Geist, Geist_Mono, Lato, Poppins, Bungee } from "next/font/google";
 const latoFont = Lato({
   variable: "--lato-font",
   weight: ["100", "300", "400", "700", "900"],
@@ -13,9 +13,14 @@ const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
+const bungeeFont = Bungee({
+  weight: ["400"],
+  variable: "--font-bungee",
+  subsets: ["latin"],
+});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-export { latoFont, poppinsFont, geistMono, geistSans };
+export { latoFont, poppinsFont, geistMono, geistSans, bungeeFont };
