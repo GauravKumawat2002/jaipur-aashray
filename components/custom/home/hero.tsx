@@ -7,8 +7,8 @@ const Hero = ({
   title = "Lorem Ipsum Dolor Sit Amet",
   subtitle = "Find your dream home with us—where trust, innovation, and lifestyle come together seamlessly!",
   tagline = "DREAMS WITHIN REACH",
-  primaryColor = "#c22126",
-  imageAlt = "Hero image",
+  // primaryColor = "#c22126",
+  // imageAlt = "Hero image",
   className = "",
 }) => {
   return (

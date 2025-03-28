@@ -1,10 +1,12 @@
 import PropertyDetails from "@/components/custom/property/property-details";
 
-export default function PropertyDetailsPage({
+export default async function PropertyDetailsPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
+  const { id } = await params;
+  console.log(id);
   const sampleProperty: PropertyDetail = {
     id: "prop1",
     title: "Luxury Downtown Apartment",

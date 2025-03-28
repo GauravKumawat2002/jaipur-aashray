@@ -114,7 +114,7 @@ const PrivacyPolicyPage: React.FC<PrivacyPolicyProps> = ({
 
       {/* Privacy Policy Sections */}
       <div className="relative z-10 space-y-8">
-        {sections.map((section, index) => {
+        {sections.map((section) => {
           const IconComponent = section.icon || Layers;
           return (
             <div key={section.id} className="group relative">

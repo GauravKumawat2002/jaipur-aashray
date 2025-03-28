@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import ContactForm from "@/components/custom/shared/contact-form";
+import Image from "next/image";
 
 interface ContactUsSectionProps {
   className?: string;
@@ -18,9 +19,11 @@ export default function ContactUsSection({ className }: ContactUsSectionProps) {
       <div className="relative z-10 grid grid-cols-1 gap-8 rounded-xl border border-gray-700/40 p-6 shadow-xl backdrop-blur-md transition-all duration-300 hover:shadow-2xl md:grid-cols-2 md:gap-16 md:p-10">
         {/* Left Side - Image Section */}
         <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-lg">
-          <img
+          <Image
             src="/commercial-building.jpg"
             alt="Contact Us"
+            height={50}
+            width={50}
             className="h-64 w-full rounded-lg object-cover transition-transform duration-300 ease-in-out hover:scale-105 md:h-full"
           />
         </div>

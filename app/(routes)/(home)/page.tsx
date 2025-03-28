@@ -191,7 +191,7 @@ export default function HomePage() {
           title="Invest Today In Your Dream Home"
           subtitle="Find your dream home with us—where trust, innovation, and lifestyle come together seamlessly!"
           tagline="DREAMS WITHIN REACH"
-          primaryColor="#c22126"
+          // primaryColor="#c22126"
         />
       </section>
       <section>

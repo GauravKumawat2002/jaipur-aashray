@@ -1,7 +1,8 @@
 "use client";
-import React, { useState, useMemo } from "react";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import React from "react";
+// import React, { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+// import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
@@ -11,7 +12,7 @@ import {
 } from "@/components/ui/carousel";
 import { default as World } from "@/components/ui/world-map";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
-import { Home, Building2, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import Image from "next/image";
 
 const TestimonialsComponent: React.FC<TestimonialsPageProps> = ({
@@ -19,12 +20,12 @@ const TestimonialsComponent: React.FC<TestimonialsPageProps> = ({
   heroText = "What our clients say about us",
 }) => {
   // Filter states
-  const [selectedPropertyType, setSelectedPropertyType] = useState<
-    string | null
-  >(null);
-  const [selectedService, setSelectedService] = useState<
-    "sale" | "rent" | null
-  >(null);
+  // const [selectedPropertyType, setSelectedPropertyType] = useState<
+  //   string | null
+  // >(null);
+  // const [selectedService, setSelectedService] = useState<
+  //   "sale" | "rent" | null
+  // >(null);
 
   // Derive unique property types and services
   //   const propertyTypes = Array.from(
@@ -82,7 +83,7 @@ const TestimonialsComponent: React.FC<TestimonialsPageProps> = ({
                         />
                         <div>
                           <p className="mb-4 text-slate-700 italic">
-                            "{testimonial.quote}"
+                            &quot;{testimonial.quote}&quot;
                           </p>
                           <div className="flex flex-col items-start justify-center pb-6">
                             <div className="mb-2 flex items-center">
@@ -109,7 +110,7 @@ const TestimonialsComponent: React.FC<TestimonialsPageProps> = ({
                   {/* Mobile Version */}
                   <Card className="border border-slate-200 bg-white px-4 py-6 text-center shadow-md md:hidden">
                     <p className="mb-4 text-slate-700 italic">
-                      "{testimonial.quote}"
+                      &ldquo;{testimonial.quote}&rdquo;
                     </p>
                     <div className="mb-2 flex items-center justify-center">
                       {[...Array(testimonial.rating)].map((_, i) => (

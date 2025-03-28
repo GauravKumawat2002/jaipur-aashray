@@ -13,9 +13,9 @@ import {
   Target,
   Heart,
   CheckCircle,
-  BriefcaseIcon,
+  // BriefcaseIcon,
   Building,
-  HandshakeIcon,
+  // HandshakeIcon,
   TrendingUp,
 } from "lucide-react";
 
@@ -29,13 +29,13 @@ interface TeamMember {
   linkedin?: string;
 }
 
-interface Testimonial {
-  id: number;
-  name: string;
-  role: string;
-  quote: string;
-  image: string;
-}
+// interface Testimonial {
+//   id: number;
+//   name: string;
+//   role: string;
+//   quote: string;
+//   image: string;
+// }
 
 interface Milestone {
   id: number;
@@ -51,21 +51,21 @@ interface ValueProps {
   title: string;
   description: string;
 }
-interface ServiceOffering {
-  id: number;
-  icon: React.ElementType;
-  title: string;
-  description: string;
-  benefits: string[];
-}
+// interface ServiceOffering {
+//   id: number;
+//   icon: React.ElementType;
+//   title: string;
+//   description: string;
+//   benefits: string[];
+// }
 
-interface InvestmentStrategy {
-  id: number;
-  type: string;
-  description: string;
-  potentialReturn: string;
-  riskLevel: "Low" | "Medium" | "High";
-}
+// interface InvestmentStrategy {
+//   id: number;
+//   type: string;
+//   description: string;
+//   potentialReturn: string;
+//   riskLevel: "Low" | "Medium" | "High";
+// }
 
 // Components
 import HeroSection from "./hero";
@@ -99,24 +99,24 @@ const teamMembers: TeamMember[] = [
   },
 ];
 
-const testimonials: Testimonial[] = [
-  {
-    id: 1,
-    name: "Sarah Johnson",
-    role: "First-Time Homebuyer",
-    quote:
-      "The team made my dream of owning a home a reality. Their expertise and support were exceptional!",
-    image: "/api/placeholder/400/400",
-  },
-  {
-    id: 2,
-    name: "Robert Garcia",
-    role: "Property Investor",
-    quote:
-      "Incredible market insights and professional guidance. They truly understand real estate investment.",
-    image: "/api/placeholder/400/400",
-  },
-];
+// const testimonials: Testimonial[] = [
+//   {
+//     id: 1,
+//     name: "Sarah Johnson",
+//     role: "First-Time Homebuyer",
+//     quote:
+//       "The team made my dream of owning a home a reality. Their expertise and support were exceptional!",
+//     image: "/api/placeholder/400/400",
+//   },
+//   {
+//     id: 2,
+//     name: "Robert Garcia",
+//     role: "Property Investor",
+//     quote:
+//       "Incredible market insights and professional guidance. They truly understand real estate investment.",
+//     image: "/api/placeholder/400/400",
+//   },
+// ];
 
 const milestones: Milestone[] = [
   { id: 1, icon: Award, value: 500, label: "Properties Sold", suffix: "+" },
@@ -157,74 +157,74 @@ const companyValues: ValueProps[] = [
 ];
 
 // New data for the sections
-const propertyServices: ServiceOffering[] = [
-  {
-    id: 1,
-    icon: Building,
-    title: "Comprehensive Property Management",
-    description:
-      "End-to-end property management solutions that maximize your investment and minimize your stress.",
-    benefits: [
-      "24/7 Maintenance Support",
-      "Tenant Screening",
-      "Rent Collection",
-      "Regular Property Inspections",
-    ],
-  },
-  {
-    id: 2,
-    icon: HandshakeIcon,
-    title: "Strategic Consultation",
-    description:
-      "Personalized real estate strategies tailored to your unique investment goals.",
-    benefits: [
-      "Market Analysis",
-      "Investment Portfolio Optimization",
-      "Risk Assessment",
-      "Long-term Growth Planning",
-    ],
-  },
-  {
-    id: 3,
-    icon: TrendingUp,
-    title: "Investment Advisory",
-    description:
-      "Advanced insights and recommendations for real estate investment opportunities.",
-    benefits: [
-      "Emerging Market Identification",
-      "ROI Projection",
-      "Diversification Strategies",
-      "Comprehensive Due Diligence",
-    ],
-  },
-];
+// const propertyServices: ServiceOffering[] = [
+//   {
+//     id: 1,
+//     icon: Building,
+//     title: "Comprehensive Property Management",
+//     description:
+//       "End-to-end property management solutions that maximize your investment and minimize your stress.",
+//     benefits: [
+//       "24/7 Maintenance Support",
+//       "Tenant Screening",
+//       "Rent Collection",
+//       "Regular Property Inspections",
+//     ],
+//   },
+//   {
+//     id: 2,
+//     icon: HandshakeIcon,
+//     title: "Strategic Consultation",
+//     description:
+//       "Personalized real estate strategies tailored to your unique investment goals.",
+//     benefits: [
+//       "Market Analysis",
+//       "Investment Portfolio Optimization",
+//       "Risk Assessment",
+//       "Long-term Growth Planning",
+//     ],
+//   },
+//   {
+//     id: 3,
+//     icon: TrendingUp,
+//     title: "Investment Advisory",
+//     description:
+//       "Advanced insights and recommendations for real estate investment opportunities.",
+//     benefits: [
+//       "Emerging Market Identification",
+//       "ROI Projection",
+//       "Diversification Strategies",
+//       "Comprehensive Due Diligence",
+//     ],
+//   },
+// ];
 
-const investmentStrategies: InvestmentStrategy[] = [
-  {
-    id: 1,
-    type: "Residential Rental Properties",
-    description:
-      "Invest in residential properties in high-growth urban areas with strong rental demand.",
-    potentialReturn: "4-8% Annual Rental Yield",
-    riskLevel: "Low",
-  },
-  {
-    id: 2,
-    type: "Commercial Real Estate",
-    description:
-      "Strategic investments in commercial spaces, including office buildings and retail centers.",
-    potentialReturn: "6-12% Annual Return",
-    riskLevel: "Medium",
-  },
-  {
-    id: 3,
-    type: "Development Projects",
-    description:
-      "High-potential investments in upcoming real estate development zones.",
-    potentialReturn: "10-20% Potential Appreciation",
-    riskLevel: "High",
-  },
-];
+// const investmentStrategies: InvestmentStrategy[] = [
+//   {
+//     id: 1,
+//     type: "Residential Rental Properties",
+//     description:
+//       "Invest in residential properties in high-growth urban areas with strong rental demand.",
+//     potentialReturn: "4-8% Annual Rental Yield",
+//     riskLevel: "Low",
+//   },
+//   {
+//     id: 2,
+//     type: "Commercial Real Estate",
+//     description:
+//       "Strategic investments in commercial spaces, including office buildings and retail centers.",
+//     potentialReturn: "6-12% Annual Return",
+//     riskLevel: "Medium",
+//   },
+//   {
+//     id: 3,
+//     type: "Development Projects",
+//     description:
+//       "High-potential investments in upcoming real estate development zones.",
+//     potentialReturn: "10-20% Potential Appreciation",
+//     riskLevel: "High",
+//   },
+// ];
 
 // Company Values Component
 const CompanyValues: React.FC = () => (
@@ -247,128 +247,128 @@ const CompanyValues: React.FC = () => (
 );
 
 // Testimonials Component
-const TestimonialSection: React.FC = () => (
-  <section className="bg-slate-100 px-8 py-16">
-    <div className="container mx-auto px-4">
-      <SectionTitle
-        title="What Our Clients Say"
-        className="mb-12 text-center"
-      />
-      <div className="grid gap-8 md:grid-cols-2">
-        {testimonials.map((testimonial) => (
-          <div
-            key={testimonial.id}
-            className="rounded-lg bg-white p-6 shadow-md"
-          >
-            <div className="mb-4 flex items-center">
-              <div className="relative mr-4 h-16 w-16">
-                <Image
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  fill
-                  className="rounded-full object-cover"
-                />
-              </div>
-              <div>
-                <h4 className="font-bold text-slate-800">{testimonial.name}</h4>
-                <p className="text-sm text-slate-600">{testimonial.role}</p>
-              </div>
-            </div>
-            <blockquote className="text-slate-700 italic">
-              "{testimonial.quote}"
-            </blockquote>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
+// const TestimonialSection: React.FC = () => (
+//   <section className="bg-slate-100 px-8 py-16">
+//     <div className="container mx-auto px-4">
+//       <SectionTitle
+//         title="What Our Clients Say"
+//         className="mb-12 text-center"
+//       />
+//       <div className="grid gap-8 md:grid-cols-2">
+//         {testimonials.map((testimonial) => (
+//           <div
+//             key={testimonial.id}
+//             className="rounded-lg bg-white p-6 shadow-md"
+//           >
+//             <div className="mb-4 flex items-center">
+//               <div className="relative mr-4 h-16 w-16">
+//                 <Image
+//                   src={testimonial.image}
+//                   alt={testimonial.name}
+//                   fill
+//                   className="rounded-full object-cover"
+//                 />
+//               </div>
+//               <div>
+//                 <h4 className="font-bold text-slate-800">{testimonial.name}</h4>
+//                 <p className="text-sm text-slate-600">{testimonial.role}</p>
+//               </div>
+//             </div>
+//             <blockquote className="text-slate-700 italic">
+//               "{testimonial.quote}"
+//             </blockquote>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   </section>
+// );
 
-// New Section: Investment Strategies
-const InvestmentStrategySection: React.FC = () => (
-  <section className="bg-slate-100 px-8 py-16">
-    <div className="container mx-auto px-4">
-      <SectionTitle
-        title="Investment Strategies Tailored to Your Goals"
-        className="mb-12 text-center"
-      />
-      <div className="grid gap-8 md:grid-cols-3">
-        {investmentStrategies.map((strategy) => (
-          <div
-            key={strategy.id}
-            className="rounded-lg bg-white p-6 shadow-md transition-all hover:shadow-xl"
-          >
-            <div className="mb-4 flex items-center">
-              <BriefcaseIcon className="mr-4 h-12 w-12 text-red-600" />
-              <h3 className="text-xl font-semibold text-slate-800">
-                {strategy.type}
-              </h3>
-            </div>
-            <p className="mb-4 text-slate-600">{strategy.description}</p>
-            <div className="space-y-2">
-              <div className="flex justify-between">
-                <span className="text-slate-700">Potential Return:</span>
-                <span className="font-semibold text-green-600">
-                  {strategy.potentialReturn}
-                </span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-slate-700">Risk Level:</span>
-                <span
-                  className={`font-semibold ${
-                    strategy.riskLevel === "Low"
-                      ? "text-green-600"
-                      : strategy.riskLevel === "Medium"
-                        ? "text-yellow-600"
-                        : "text-red-600"
-                  }`}
-                >
-                  {strategy.riskLevel}
-                </span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
+// // New Section: Investment Strategies
+// const InvestmentStrategySection: React.FC = () => (
+//   <section className="bg-slate-100 px-8 py-16">
+//     <div className="container mx-auto px-4">
+//       <SectionTitle
+//         title="Investment Strategies Tailored to Your Goals"
+//         className="mb-12 text-center"
+//       />
+//       <div className="grid gap-8 md:grid-cols-3">
+//         {investmentStrategies.map((strategy) => (
+//           <div
+//             key={strategy.id}
+//             className="rounded-lg bg-white p-6 shadow-md transition-all hover:shadow-xl"
+//           >
+//             <div className="mb-4 flex items-center">
+//               <BriefcaseIcon className="mr-4 h-12 w-12 text-red-600" />
+//               <h3 className="text-xl font-semibold text-slate-800">
+//                 {strategy.type}
+//               </h3>
+//             </div>
+//             <p className="mb-4 text-slate-600">{strategy.description}</p>
+//             <div className="space-y-2">
+//               <div className="flex justify-between">
+//                 <span className="text-slate-700">Potential Return:</span>
+//                 <span className="font-semibold text-green-600">
+//                   {strategy.potentialReturn}
+//                 </span>
+//               </div>
+//               <div className="flex justify-between">
+//                 <span className="text-slate-700">Risk Level:</span>
+//                 <span
+//                   className={`font-semibold ${
+//                     strategy.riskLevel === "Low"
+//                       ? "text-green-600"
+//                       : strategy.riskLevel === "Medium"
+//                         ? "text-yellow-600"
+//                         : "text-red-600"
+//                   }`}
+//                 >
+//                   {strategy.riskLevel}
+//                 </span>
+//               </div>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   </section>
+// );
 
-// New Section: Comprehensive Services
-const ComprehensiveServices: React.FC = () => (
-  <section className="bg-white px-8 py-16">
-    <div className="container mx-auto px-4">
-      <SectionTitle
-        title="Our Comprehensive Real Estate Services"
-        className="mb-12 text-center"
-      />
-      <div className="grid gap-8 md:grid-cols-3">
-        {propertyServices.map((service) => (
-          <div
-            key={service.id}
-            className="rounded-lg bg-slate-50 p-6 shadow-md transition-all hover:shadow-xl"
-          >
-            <div className="mb-4 flex items-center">
-              <service.icon className="mr-4 h-12 w-12 text-red-600" />
-              <h3 className="text-xl font-semibold text-slate-800">
-                {service.title}
-              </h3>
-            </div>
-            <p className="mb-4 text-slate-600">{service.description}</p>
-            <ul className="space-y-2 text-slate-700">
-              {service.benefits.map((benefit, index) => (
-                <li key={index} className="flex items-center">
-                  <CheckCircle className="mr-2 h-4 w-4 text-green-500" />
-                  {benefit}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
+// // New Section: Comprehensive Services
+// const ComprehensiveServices: React.FC = () => (
+//   <section className="bg-white px-8 py-16">
+//     <div className="container mx-auto px-4">
+//       <SectionTitle
+//         title="Our Comprehensive Real Estate Services"
+//         className="mb-12 text-center"
+//       />
+//       <div className="grid gap-8 md:grid-cols-3">
+//         {propertyServices.map((service) => (
+//           <div
+//             key={service.id}
+//             className="rounded-lg bg-slate-50 p-6 shadow-md transition-all hover:shadow-xl"
+//           >
+//             <div className="mb-4 flex items-center">
+//               <service.icon className="mr-4 h-12 w-12 text-red-600" />
+//               <h3 className="text-xl font-semibold text-slate-800">
+//                 {service.title}
+//               </h3>
+//             </div>
+//             <p className="mb-4 text-slate-600">{service.description}</p>
+//             <ul className="space-y-2 text-slate-700">
+//               {service.benefits.map((benefit, index) => (
+//                 <li key={index} className="flex items-center">
+//                   <CheckCircle className="mr-2 h-4 w-4 text-green-500" />
+//                   {benefit}
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   </section>
+// );
 
 const ServiceShowcaseSection: React.FC = () => {
   const [activeService, setActiveService] = useState(0);

@@ -75,7 +75,7 @@ export default function Navbar({ className }: { className?: string }) {
               {components.map((component, index) => {
                 const [[key, value]] = Object.entries(component);
                 return (
-                  <NavigationMenuItem key={index}>
+                  <NavigationMenuItem key={index + key}>
                     {value.internalLinks ? (
                       <>
                         <NavigationMenuTrigger>
@@ -139,13 +139,13 @@ export default function Navbar({ className }: { className?: string }) {
 
               {/* Mobile Links */}
               <div className="mt-4 flex flex-col gap-6">
-                {components.map((component, index) => {
+                {components.map((component) => {
                   const [[key, value]] = Object.entries(component);
 
                   return value.internalLinks ? (
                     value.internalLinks.map((link, idx) => (
                       <Link
-                        key={idx + link.title}
+                        key={idx + key}
                         href={link.href}
                         className="block border-b pb-2 text-base leading-none font-medium tracking-wide transition-colors select-none hover:text-red-700 focus:text-red-700"
                       >
