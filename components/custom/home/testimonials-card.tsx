@@ -15,7 +15,7 @@ export default function ClientTestimonialCard({
   imageUrl,
 }: ClientTestimonialCardProps) {
   return (
-    <Card className="h-48 w-full rounded-xl border border-gray-200 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+    <Card className="w-full rounded-xl border border-gray-200 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
       <CardHeader className="flex items-center gap-4">
         <Image
           src={imageUrl || "/default-avatar.png"}

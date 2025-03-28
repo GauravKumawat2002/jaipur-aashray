@@ -178,7 +178,8 @@ const testimonialsData = [
   {
     name: "Robert Brown",
     role: "Project Manager, LMN Inc",
-    testimonial: "Professional and result-driven team. Great to work with!",
+    testimonial:
+      "Professional and result-driven team. Great to work with! Professional and result-driven team. Great to work with!Professional and result-driven team. Great to work with!",
     imageUrl: "/robert-brown.jpg",
   },
 ];
